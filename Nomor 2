@@ -1,0 +1,35 @@
+def tambahkan_matriks(matriks1, matriks2):
+    """Menambahkan dua matriks."""
+
+    matriks_hasil = []
+    for i in range(len(matriks1)):
+        row = []
+        for j in range(len(matriks1[0])):
+            row.append(matriks1[i][j] + matriks2[i][j])
+        matriks_hasil.append(row)
+    return matriks_hasil
+
+
+def main():
+    """Program utama."""
+
+    n = int(input("Masukkan ukuran matriks: "))
+
+    matriks1 = []
+    for i in range(n):
+        row = input("Masukkan baris ke-{}: ".format(i + 1)).split()
+        matriks1.append([int(elem) for elem in row])
+
+    matriks2 = []
+    for i in range(n):
+        row = input("Masukkan baris ke-{}: ".format(i + 1)).split()
+        matriks2.append([int(elem) for elem in row])
+
+    matriks_hasil = tambahkan_matriks(matriks1, matriks2)
+
+    print("Matriks hasil penjumlahan:")
+    print(matriks_hasil)
+
+
+if __name__ == "__main__":
+    main()
