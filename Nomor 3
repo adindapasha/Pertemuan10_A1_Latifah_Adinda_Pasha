@@ -1,0 +1,30 @@
+def transpose_matriks(matriks):
+    """Menghitung transpose dari matriks."""
+
+    matriks_transpose = []
+    for i in range(len(matriks[0])):
+        row = []
+        for j in range(len(matriks)):
+            row.append(matriks[j][i])
+        matriks_transpose.append(row)
+    return matriks_transpose
+
+
+def main():
+    """Program utama."""
+
+    n = int(input("Masukkan ukuran matriks: "))
+
+    matriks = []
+    for i in range(n):
+        row = input("Masukkan baris ke-{}: ".format(i + 1)).split()
+        matriks.append([int(elem) for elem in row])
+
+    matriks_transpose = transpose_matriks(matriks)
+
+    print("Matriks transpose:")
+    print(matriks_transpose)
+
+
+if __name__ == "__main__":
+    main()
